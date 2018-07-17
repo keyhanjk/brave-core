@@ -80,6 +80,7 @@ source_set("browser") {
     "//brave/components/omnibox/browser:brave_autocomplete",
     "extensions",
     "net",
+    "permissions",
   ]
 
   if (is_mac) {
