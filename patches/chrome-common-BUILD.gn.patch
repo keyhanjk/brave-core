@@ -1,0 +1,12 @@
+diff --git a/chrome/common/BUILD.gn b/chrome/common/BUILD.gn
+index 9a21e268447a0ea984101132329073dca486f6ad..0492ca8f7f66901a1ae5797cc0d32693103bdd86 100644
+--- a/chrome/common/BUILD.gn
++++ b/chrome/common/BUILD.gn
+@@ -538,6 +538,7 @@ static_library("non_code_constants") {
+     "//printing/buildflags",
+     "//ui/base:ui_features",
+   ]
++  if (brave_chromium_build) { configs += [ "//brave/common:constants_configs" ] }
+ }
+ 
+ static_library("constants") {
