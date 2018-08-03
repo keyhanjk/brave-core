@@ -1,5 +1,5 @@
 diff --git a/extensions/browser/updater/update_service.cc b/extensions/browser/updater/update_service.cc
-index 93dda0f45fe1d3f44f229ff4fe5fc0ff6a02ab6c..865b867cde2234777a78c3b914f68123cfb681ee 100644
+index 93dda0f45fe1d3f44f229ff4fe5fc0ff6a02ab6c..611a290b86db9e64a787f6650cc320c2734bba9e 100644
 --- a/extensions/browser/updater/update_service.cc
 +++ b/extensions/browser/updater/update_service.cc
 @@ -32,7 +32,7 @@ namespace extensions {
@@ -11,3 +11,11 @@ index 93dda0f45fe1d3f44f229ff4fe5fc0ff6a02ab6c..865b867cde2234777a78c3b914f68123
  
  void SendUninstallPingCompleteCallback(update_client::Error error) {}
  
+@@ -288,6 +288,7 @@ void UpdateService::StartUpdateCheck(
+     size_t batch_size =
+         std::min(kMaxExtensionsPerUpdate,
+                  static_cast<size_t>(std::distance(it, update_data.end())));
++    LOG(ERROR) << "Doing batch size of : " << batch_size;
+ 
+     std::vector<std::string> batch_ids;
+     batch_ids.reserve(batch_size);

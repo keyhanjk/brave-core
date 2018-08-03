@@ -90,19 +90,27 @@ BraveConfigurator::BraveConfigurator(
 }
 
 int BraveConfigurator::InitialDelay() const {
-  return configurator_impl_.InitialDelay();
+  LOG(ERROR) << "initial delay 10";
+  return 10;
+  //return configurator_impl_.InitialDelay();
 }
 
 int BraveConfigurator::NextCheckDelay() const {
-  return configurator_impl_.NextCheckDelay();
+  LOG(ERROR) << "next check delay 20";
+  return 20;
+  //return configurator_impl_.NextCheckDelay();
 }
 
 int BraveConfigurator::OnDemandDelay() const {
-  return configurator_impl_.OnDemandDelay();
+  LOG(ERROR) << "Demand Delay 5";
+  return 5;
+  //return configurator_impl_.OnDemandDelay();
 }
 
 int BraveConfigurator::UpdateDelay() const {
-  return configurator_impl_.UpdateDelay();
+  LOG(ERROR) << "Update delay 30";
+  return 30;
+  //return configurator_impl_.UpdateDelay();
 }
 
 std::vector<GURL> BraveConfigurator::UpdateUrl() const {

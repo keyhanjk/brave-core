@@ -1,0 +1,12 @@
+diff --git a/components/component_updater/component_updater_service.cc b/components/component_updater/component_updater_service.cc
+index 5833ba3ebf363f28b6812c3c0d85ecff0d3d4ff2..c8ffc59a438ebac4dbd90834b2bd59f998eaa1a7 100644
+--- a/components/component_updater/component_updater_service.cc
++++ b/components/component_updater/component_updater_service.cc
+@@ -347,6 +347,7 @@ bool CrxUpdateService::CheckForUpdates(
+       std::move(on_finished));
+ 
+   if (!unsecure_ids.empty()) {
++    LOG(ERROR) << "CrxUpdateService::CheckForUpdates vector size for unsecure ids: " << unsecure_ids.size();
+     update_client_->Update(
+         unsecure_ids,
+         base::BindOnce(&CrxUpdateService::GetCrxComponents,

@@ -1,0 +1,12 @@
+diff --git a/components/update_client/update_client.cc b/components/update_client/update_client.cc
+index 561bbcf9902046cafecc31f09e72248d8b2fff07..0f9f28e9664decb7ca089005be707778e65e4eba 100644
+--- a/components/update_client/update_client.cc
++++ b/components/update_client/update_client.cc
+@@ -110,6 +110,7 @@ void UpdateClientImpl::Update(const std::vector<std::string>& ids,
+                               bool is_foreground,
+                               Callback callback) {
+   DCHECK(thread_checker_.CalledOnValidThread());
++  LOG(ERROR) << "UpdateClientImpl::Update ids size:" << ids.size();
+ 
+   auto task = base::MakeRefCounted<TaskUpdate>(
+       update_engine_.get(), is_foreground, ids, std::move(crx_data_callback),

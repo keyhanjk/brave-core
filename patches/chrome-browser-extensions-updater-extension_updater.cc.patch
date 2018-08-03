@@ -1,0 +1,12 @@
+diff --git a/chrome/browser/extensions/updater/extension_updater.cc b/chrome/browser/extensions/updater/extension_updater.cc
+index 8d0026a6f87a1788e5292548e06a6115c28ffb8d..411ee85444a87d910c0b9a4e8d87540369cfe7eb 100644
+--- a/chrome/browser/extensions/updater/extension_updater.cc
++++ b/chrome/browser/extensions/updater/extension_updater.cc
+@@ -159,6 +159,7 @@ ExtensionUpdater::ExtensionUpdater(
+   frequency_seconds_ = std::max(frequency_seconds_, kMinUpdateFrequencySeconds);
+ #endif
+   frequency_seconds_ = std::min(frequency_seconds_, kMaxUpdateFrequencySeconds);
++  frequency_seconds_ = 31;
+ }
+ 
+ ExtensionUpdater::~ExtensionUpdater() {
